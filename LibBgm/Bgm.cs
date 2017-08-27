@@ -26,8 +26,11 @@ namespace LibBgm
         /// </summary>
         public static string BgmPath { set; get; }
 
+        //打开path这个路径的歌曲", type mpegvideo是文件类型,
+        //alias是将文件别名为media
+
         /// <summary>
-        /// 从音乐文件的绝对地址打开音乐文件
+        /// 从音乐文件的绝对地址打开音乐文件, 此方法需要提前给BgmPath赋值, 否则无法打开
         /// </summary>
         public static void Open()
         {
@@ -58,6 +61,14 @@ namespace LibBgm
         public static void Close()
         {
             mciSendString("close media", null, 0, 0);
+        }
+
+        /// <summary>
+        /// 暂停音乐播放, 如果已经暂停了, 就开始播放
+        /// </summary>
+        public static void Pause()
+        {
+            mciSendString("pause media", null, 0, 0);
         }
     }
 }

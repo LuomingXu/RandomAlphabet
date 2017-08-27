@@ -17,10 +17,11 @@ namespace RandomAlphabet
     public partial class FromMain : Form
     {
         SoundPlayer wavPlayer = new SoundPlayer(Properties.Resources.TickTock);
-        SoundPlayer wavBgm = new SoundPlayer(Properties.Resources.Moby___Extreme_Ways__Jason_Bourne_);
+        //SoundPlayer wavBgm = new SoundPlayer(Properties.Resources.Moby___Extreme_Ways__Jason_Bourne_);
 
-        private string BgmPath = "C:\\Users\\xjy46\\Desktop\\WAV\\StayWithMe.mp3";
-
+        //会自动识别为相对路径
+        private string BgmPath = "StayWithMe.mp3";
+        
         public FromMain()
         {
             InitializeComponent();
@@ -154,9 +155,39 @@ namespace RandomAlphabet
             Bgm.Play();
         }
 
+        //由于不会用pause, 继续的命令来暂停, 播放音乐, 所以外用了count来记录
+        //暂停按钮点击了几次, 来实现暂停播放的功能
+
+        private int countPause = 0;
+
         private void BtnBgmPause_Click(object sender, EventArgs e)
         {
-            Bgm.Close();
+            countPause++;
+
+            if ((countPause % 2) != 0)
+            {
+                Bgm.Pause();
+            }
+            else
+            {
+                Bgm.Play();
+            }
+        }
+
+        private int countClose = 0;
+
+        private void BtnClosePlay_Click(object sender, EventArgs e)
+        {
+            countClose++;
+
+            if ((countClose % 2) != 0)
+            {
+                Bgm.Close();
+            }
+            else
+            {
+                Bgm.Play();
+            }
         }
     }
 }

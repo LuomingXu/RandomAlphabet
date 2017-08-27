@@ -39,6 +39,7 @@
             this.TbrVoice = new System.Windows.Forms.TrackBar();
             this.BtnBgmPause = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnClosePlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TbrVoice)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -146,12 +147,23 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.TbrVoice);
-            this.groupBox1.Location = new System.Drawing.Point(215, 570);
+            this.groupBox1.Location = new System.Drawing.Point(423, 570);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(314, 95);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "音量调节";
+            // 
+            // BtnClosePlay
+            // 
+            this.BtnClosePlay.Font = new System.Drawing.Font("宋体", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnClosePlay.Location = new System.Drawing.Point(222, 570);
+            this.BtnClosePlay.Name = "BtnClosePlay";
+            this.BtnClosePlay.Size = new System.Drawing.Size(177, 62);
+            this.BtnClosePlay.TabIndex = 9;
+            this.BtnClosePlay.Text = "停止Bgm";
+            this.BtnClosePlay.UseVisualStyleBackColor = true;
+            this.BtnClosePlay.Click += new System.EventHandler(this.BtnClosePlay_Click);
             // 
             // FromMain
             // 
@@ -159,6 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 644);
+            this.Controls.Add(this.BtnClosePlay);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnBgmPause);
             this.Controls.Add(this.CmbTimeChoose);
@@ -193,6 +206,7 @@
         private System.Windows.Forms.TrackBar TbrVoice;
         private System.Windows.Forms.Button BtnBgmPause;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BtnClosePlay;
     }
 }
 

@@ -87,8 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="64x64.ico" />
-    <None Include="Resources\Moby - Extreme Ways %28Jason Bourne%29.wav" />
-    <None Include="Resources\Stay With Me-cut.wav" />
+    <Content Include="Resources\StayWithMe.mp3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibBgm\LibBgm.csproj">
